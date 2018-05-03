@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DataBindingDemo</string>
+    <string name="click_btn">点击事件</string>
+    <string name="show_tv">%s,%s</string>
 </resources>
