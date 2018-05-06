@@ -4,14 +4,20 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
-        <variable
-            name="user"
+        <variable name="large" type="boolean" />
+        <variable name="user"
             type="com.example.zuo.databindingdemo.bean.UserBean"/>
-
-        <variable
-            name="viewModel"
+        <variable name="viewModel"
             type="com.example.zuo.databindingdemo.viewModel.MainActivityViewModel"/>
+        <import type="android.util.SparseArray"/>
+        <import type="java.util.Map"/>
+        <import type="java.util.List"/>
+        <variable name="list" type="List<String>"/>
+        <variable name="sparse" type="SparseArray<String>"/>
+        <variable name="map" type="Map<String, String>"/>
+        <variable name="index" type="int"/>
+        <variable name="key" type="String"/>
+
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -19,10 +25,14 @@
         android:layout_height="match_parent"
         tools:context="com.example.zuo.databindingdemo.MainActivity">
 
+        <include layout="@layout/header"
+            app:user="@{user}"/>
+
         <TextView
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="@{large? @dimen/largePadding : @dimen/smallPadding}"
             android:background="@color/colorPrimary"
             android:gravity="center"
             android:text="@{user.isValidAge?user.name+' '+user.age:user.name}"

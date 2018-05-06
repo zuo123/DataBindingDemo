@@ -24,6 +24,7 @@ public class MainActivity extends BaseActivity {
         user = new UserBean("王小二", 27,false);
         binding.setUser(user);
         binding.setViewModel(new MainActivityViewModel(MainActivity.this,binding));
+        binding.setLarge(true);
     }
 
 }
