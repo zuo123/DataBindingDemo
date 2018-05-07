@@ -1,10 +1,12 @@
 package com.example.zuo.databindingdemo.bean;
 
+import android.databinding.BaseObservable;
+
 /**
  * Created by zuo on 2018/5/2.
  */
 
-public class UserBean {
+public class UserBean extends BaseObservable {
     private String name;
     private int age;
     private boolean isValidAge;

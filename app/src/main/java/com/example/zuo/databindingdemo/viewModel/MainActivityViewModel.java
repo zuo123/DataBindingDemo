@@ -24,7 +24,15 @@ public class MainActivityViewModel extends BaseViewModel {
 
     public void viewClick(View view) {
         Toast.makeText(view.getContext(), "改变展示信息", Toast.LENGTH_SHORT).show();
-        mBinding.setUser(new UserBean("王小二", 27,true));
+        UserBean user = mBinding.getUser();
+        if (user.isValidAge()){
+            user.setValidAge(false);
+            user.setName("王小二");
+        }else {
+            user.setValidAge(true);
+            user.setName("王王王");
+        }
+        mBinding.setUser(user);
     }
 
 }

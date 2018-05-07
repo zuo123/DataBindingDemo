@@ -4,19 +4,10 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="large" type="boolean" />
         <variable name="user"
             type="com.example.zuo.databindingdemo.bean.UserBean"/>
-        <variable name="viewModel"
-            type="com.example.zuo.databindingdemo.viewModel.MainActivityViewModel"/>
-        <import type="android.util.SparseArray"/>
-        <import type="java.util.Map"/>
-        <import type="java.util.List"/>
-        <variable name="list" type="List<String>"/>
-        <variable name="sparse" type="SparseArray<String>"/>
-        <variable name="map" type="Map<String, String>"/>
-        <variable name="index" type="int"/>
-        <variable name="key" type="String"/>
+        <variable name="presenter"
+            type="com.example.zuo.databindingdemo.base.ViewPresenter"/>
 
     </data>
 
@@ -32,7 +23,7 @@
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@{large? @dimen/largePadding : @dimen/smallPadding}"
+            android:padding="@dimen/smallPadding"
             android:background="@color/colorPrimary"
             android:gravity="center"
             android:text="@{user.isValidAge?user.name+' '+user.age:user.name}"
@@ -42,11 +33,12 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
+            android:id="@+id/click_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:background="@color/colorAccent"
-            android:onClick="@{viewModel.viewClick}"
+            android:onClick="@{(v)->presenter.onClick(v)}"
             android:paddingBottom="5dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"

@@ -1,0 +1,10 @@
+package com.zuo.plugin
+import org.gradle.api.Plugin
+import org.gradle.api.Project
+
+class ZuoPlugin implements Plugin<Project> {
+    @Override
+    void apply(Project project) {
+
+    }
+}
