@@ -31,15 +31,15 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-        maven { url uri('../repo') }
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.2'
-        classpath 'com.zuo.plugin:zuoplugin:1.0.0'
-    }
-}
+//buildscript {
+//    repositories {
+//        google()
+//        mavenCentral()
+//        maven { url uri('../repo') }
+//    }
+//
+//    dependencies {
+//        classpath 'com.android.tools.build:gradle:3.1.2'
+//        classpath 'com.zuo.plugin:zuoplugin:1.0.0'
+//    }
+//}
