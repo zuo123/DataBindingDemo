@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.zuo.plugin'
 
 android {
     compileSdkVersion 27
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.example.zuo.databindingdemo"
         minSdkVersion 19
@@ -29,17 +29,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile project(':aoplibrary')
 }
 
-//buildscript {
-//    repositories {
-//        google()
-//        mavenCentral()
-//        maven { url uri('../repo') }
-//    }
-//
-//    dependencies {
-//        classpath 'com.android.tools.build:gradle:3.1.2'
-//        classpath 'com.zuo.plugin:zuoplugin:1.0.0'
-//    }
-//}
+
